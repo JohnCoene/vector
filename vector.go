@@ -35,38 +35,45 @@ func RandomVectors(n int) []Vector {
 	return vector
 }
 
-func (v *Vector) add(vect Vector) {
+// Add add another vector
+func (v *Vector) Add(vect Vector) {
 	v.X += vect.X
 	v.Y += vect.Y
 }
 
-func (v *Vector) sub(vect Vector) {
+// Sub subtract another vector
+func (v *Vector) Sub(vect Vector) {
 	v.X -= vect.X
 	v.Y -= vect.Y
 }
 
-func (v *Vector) mult(x float64) {
+// Mult multiply a vector by a float
+func (v *Vector) Mult(x float64) {
 	v.X *= x
 	v.Y *= x
 }
 
-func (v *Vector) mag() float64 {
+// Mag get the magnitude of a vector
+func (v *Vector) Mag() float64 {
 	h := math.Pow(v.X, 2) + math.Pow(v.Y, 2)
 	return math.Sqrt(h)
 }
 
-func (v *Vector) norm() {
-	h := v.mag()
+// Norm normlaise a vector between 0 and 1
+func (v *Vector) Norm() {
+	h := v.Mag()
 	v.X /= h
 	v.Y /= h
 }
 
-func (v *Vector) setMag(x float64) {
-	v.norm()
-	v.mult(x)
+// SetMag set the magnitude of a vector
+func (v *Vector) SetMag(x float64) {
+	v.Norm()
+	v.Mult(x)
 }
 
-func (v *Vector) div(x float64) {
+// Div divide by a fload
+func (v *Vector) Div(x float64) {
 	v.X /= x
 	v.Y /= x
 }
