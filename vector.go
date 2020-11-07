@@ -65,3 +65,8 @@ func (v *Vector) setMag(x float64) {
 	v.norm()
 	v.mult(x)
 }
+
+func (v *Vector) div(x float64) {
+	v.X /= x
+	v.Y /= x
+}
