@@ -6,7 +6,7 @@ A package for basic 2d vector operations.
 go get github.com/JohnCoene/vector
 ```
 
-## Tests
+## Usage 
 
 ```go
 package main
