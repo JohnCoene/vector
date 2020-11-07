@@ -2,9 +2,17 @@
 
 A package for basic 2d vector operations.
 
+```bash
+go get github.com/JohnCoene/vector
+```
+
+## Tests
+
 ```go
-v1 := Vector{X: 1, Y: 0}
-v2 := Vector{X: 1, Y: 1}
+import "github.com/JohnCoene/vector"
+
+v1 := vector.Vector{X: 1, Y: 0}
+v2 := vector.Vector{X: 1, Y: 1}
 
 fmt.Printf("original vector x: %f, y: %f\n", v1.X, v1.Y)
 
