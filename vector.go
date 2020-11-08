@@ -15,21 +15,25 @@ type Vector struct {
 var seed = rand.NewSource(time.Now().UnixNano())
 var r = rand.New(seed)
 
+func randomFloat(min, max float64) float64 {
+	return min + r.Float64()*(max-min)
+}
+
 // RandomVector creates a random vector
-func RandomVector() Vector {
+func RandomVector(min, max float64) Vector {
 	v := Vector{
-		X: r.Float64(),
-		Y: r.Float64(),
+		X: randomFloat(min, max),
+		Y: randomFloat(min, max),
 	}
 	return v
 }
 
 // RandomVectors create n random vectors
-func RandomVectors(n int) []Vector {
+func RandomVectors(n int, min, max float64) []Vector {
 	var vector []Vector
 
 	for i := 0; i < n; i++ {
-		vector = append(vector, RandomVector())
+		vector = append(vector, RandomVector(min, max))
 	}
 
 	return vector

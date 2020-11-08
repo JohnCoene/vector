@@ -5,6 +5,6 @@ import (
 )
 
 func TestRandomVector(t *testing.T) {
-	RandomVector()
-	RandomVectors(5)
+	RandomVector(1, 100)
+	RandomVectors(5, 1, 100)
 }
