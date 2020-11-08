@@ -30,4 +30,9 @@ func TestOp(t *testing.T) {
 	v1.SetMag(20)
 	mag3 := v1.Mag()
 	fmt.Printf("Vector set mag to 20, mag: %f\n", mag3)
+
+	v1.Limit(5)
+	fmt.Printf("Vector magnitude limited to 5, mag: %f\n", v1.Mag())
+	v1.Limit(10)
+	fmt.Printf("Vector magnitude limited to 10, mag: %f\n", v1.Mag())
 }

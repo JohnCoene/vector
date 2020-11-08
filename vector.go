@@ -81,3 +81,11 @@ func (v *Vector) Div(x float64) {
 	v.X /= x
 	v.Y /= x
 }
+
+// Limit defines a maximum magnitude for the vector
+func (v *Vector) Limit(x float64) {
+	mag := v.Mag()
+	if mag > x {
+		v.SetMag(x)
+	}
+}
