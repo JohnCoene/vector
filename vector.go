@@ -94,10 +94,16 @@ func (v *Vector) SetMag(x float64) {
 	v.Multf(x)
 }
 
-// Div divide by a fload
-func (v *Vector) Div(x float64) {
-	v.X /= x
-	v.Y /= x
+// Divf divide by a fload
+func (v *Vector) Divf(n float64) {
+	v.X /= n
+	v.Y /= n
+}
+
+// Div divide by another vector
+func (v *Vector) Div(vect Vector) {
+	v.X /= vect.X
+	v.Y /= vect.Y
 }
 
 // Limit defines a maximum magnitude for the vector
@@ -153,5 +159,13 @@ func Multf(v Vector, n float64) Vector {
 	results := Vector{X: v.X, Y: v.Y}
 	results.X *= n
 	results.Y *= n
+	return results
+}
+
+// Divf divide by a float
+func Divf(v Vector, n float64) Vector {
+	results := Vector{X: v.X, Y: v.Y}
+	results.X /= n
+	results.Y /= n
 	return results
 }
