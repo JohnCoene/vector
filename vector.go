@@ -131,3 +131,27 @@ func Mult(v1, v2 Vector) Vector {
 	results.Y = v1.Y * v2.Y
 	return results
 }
+
+// Addf add a float to a vector
+func Addf(v Vector, n float64) Vector {
+	results := Vector{X: v.X, Y: v.Y}
+	results.X += n
+	results.Y += n
+	return results
+}
+
+// Subf subtract a float from a vector
+func Subf(v Vector, n float64) Vector {
+	results := Vector{X: v.X, Y: v.Y}
+	results.X -= n
+	results.Y -= n
+	return results
+}
+
+// Multf multiply a vector by a float
+func Multf(v Vector, n float64) Vector {
+	results := Vector{X: v.X, Y: v.Y}
+	results.X *= n
+	results.Y *= n
+	return results
+}

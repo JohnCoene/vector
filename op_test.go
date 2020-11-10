@@ -35,4 +35,11 @@ func TestOp(t *testing.T) {
 	fmt.Printf("Vector magnitude limited to 5, mag: %f\n", v1.Mag())
 	v1.Limit(10)
 	fmt.Printf("Vector magnitude limited to 10, mag: %f\n", v1.Mag())
+
+	v3 := Vector{X: 1, Y: 1}
+	v4 := Addf(v3, 5)
+	fmt.Println("Original vector:")
+	fmt.Println(v3)
+	fmt.Println("Vector added 5")
+	fmt.Println(v4)
 }
