@@ -17,7 +17,7 @@ func TestOp(t *testing.T) {
 	v1.Sub(v2)
 	fmt.Printf("Subtracted vector x: %f, y: %f\n", v1.X, v1.Y)
 
-	v1.Mult(5)
+	v1.Multf(5)
 	fmt.Printf("Vector multiplied by 5 x: %f, y: %f\n", v1.X, v1.Y)
 
 	mag := v1.Mag()

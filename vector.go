@@ -39,10 +39,16 @@ func RandomVectors(n int, min, max float64) []Vector {
 	return vector
 }
 
-// Add add another vector
+// Add two vectors
 func (v *Vector) Add(vect Vector) {
 	v.X += vect.X
 	v.Y += vect.Y
+}
+
+// Addf add a float to a vector
+func (v *Vector) Addf(n float64) {
+	v.X += n
+	v.Y += n
 }
 
 // Sub subtract another vector
@@ -51,10 +57,22 @@ func (v *Vector) Sub(vect Vector) {
 	v.Y -= vect.Y
 }
 
-// Mult multiply a vector by a float
-func (v *Vector) Mult(x float64) {
-	v.X *= x
-	v.Y *= x
+// Subf substract a float from vector
+func (v *Vector) Subf(n float64) {
+	v.X -= n
+	v.Y -= n
+}
+
+// Mult multiply two vectors
+func (v *Vector) Mult(vect Vector) {
+	v.X *= vect.X
+	v.Y *= vect.Y
+}
+
+// Multf multiply a vector by a float
+func (v *Vector) Multf(n float64) {
+	v.X *= n
+	v.Y *= n
 }
 
 // Mag get the magnitude of a vector
@@ -73,7 +91,7 @@ func (v *Vector) Norm() {
 // SetMag set the magnitude of a vector
 func (v *Vector) SetMag(x float64) {
 	v.Norm()
-	v.Mult(x)
+	v.Multf(x)
 }
 
 // Div divide by a fload
@@ -83,9 +101,33 @@ func (v *Vector) Div(x float64) {
 }
 
 // Limit defines a maximum magnitude for the vector
-func (v *Vector) Limit(x float64) {
+func (v *Vector) Limit(n float64) {
 	mag := v.Mag()
-	if mag > x {
-		v.SetMag(x)
+	if mag > n {
+		v.SetMag(n)
 	}
+}
+
+// Sub subract one vector from another
+func Sub(v1, v2 Vector) Vector {
+	var results Vector
+	results.X = v1.X - v2.X
+	results.Y = v1.Y - v2.Y
+	return results
+}
+
+// Add add one vector with another
+func Add(v1, v2 Vector) Vector {
+	var results Vector
+	results.Add(v1)
+	results.Add(v2)
+	return results
+}
+
+// Mult multiply two vectors
+func Mult(v1, v2 Vector) Vector {
+	var results Vector
+	results.X = v1.X * v2.X
+	results.Y = v1.Y * v2.Y
+	return results
 }
